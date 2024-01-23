@@ -2,7 +2,7 @@ import React from 'react'
 import {BsFillTrashFill, BsFillPencilFill} from 'react-icons/bs'
 import './Table.css'
 
-const Table = () => {
+const Table = ({rows, deleteRow, editRow}) => {
   return (
     <div className='table-wrapper'>
         <table className='table'>
@@ -15,45 +15,27 @@ const Table = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Home</td>
-                    <td>This is main page</td>
+            {
+                rows.map((row, index) => {
+
+                    const statusText = row.status.charAt(0).toUpperCase() + row.status.slice(1);
+                    return <tr key={index}>
+                    <td>{row.page}</td>
+                    <td className='expand'>{row.desc}</td>
                     <td>
-                        <span className='label label-live'>Live</span>
+                        <span className={`label label-${row.status}`}>{statusText}</span>
                     </td>
                     <td>
                         <span className='actions'>
-                            <BsFillTrashFill className='delete'/>
-                            <BsFillPencilFill/>
+                            <BsFillTrashFill className='delete' onClick={() => deleteRow(index)}/>
+                            <BsFillPencilFill onClick={() => editRow(index)}/>
                         </span>
                     </td>
-                </tr>
-                <tr>
-                    <td>About</td>
-                    <td>This is about page</td>
-                    <td>
-                        <span className='label label-draft'>Draft</span>
-                    </td>
-                    <td>
-                        <span className='actions'>
-                            <BsFillTrashFill className='delete'/>
-                            <BsFillPencilFill/>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Error</td>
-                    <td>This is error page</td>
-                    <td>
-                        <span className='label label-error'>Error</span>
-                    </td>
-                    <td>
-                        <span className='actions'>
-                            <BsFillTrashFill className='delete'/>
-                            <BsFillPencilFill/>
-                        </span>
-                    </td>
-                </tr>
+                    
+                    </tr>
+                })
+            }
+               
             </tbody>
         </table>
     </div>

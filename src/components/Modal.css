@@ -23,21 +23,11 @@
     display: block;
 
 }
-.form-grp{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-}
 
-.form-grp input,
-.form-grp textarea,
-.form-grp select{
-    border: 1px solid black;
-    border-radius: 1px;
-    padding: .3rem;
-    font-size: .1rem;
-}
-
-.form-grp label{
-    margin-bottom: .2rem;
+.err{
+    background-color: lightcoral;
+    color: red;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.3rem;
 }
