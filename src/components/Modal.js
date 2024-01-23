@@ -52,7 +52,7 @@ const Modal = ({closeModal, onSubmit, defaultValue}) => {
                         onChange={handleChange}
                     />
                 </div>
-                <div>
+                <div className='form-grp'>
                     <label htmlFor='desc'>Desc</label>
                     <textarea
                         name='desc'
@@ -60,7 +60,7 @@ const Modal = ({closeModal, onSubmit, defaultValue}) => {
                         onChange={handleChange}
                     />
                 </div>
-                <div>
+                <div className='form-grp'>
                     <label htmlFor='status'>Status</label>
                     <select name='status' value={formState.status} onChange={handleChange}>
                         <option value='live'>Live</option>
@@ -70,7 +70,7 @@ const Modal = ({closeModal, onSubmit, defaultValue}) => {
                     </select>
                 </div>
                 {error && <div className='err'>{`Please include: ${error}`}</div>}
-                <button type='submit' className='submitBtn' onClick={handleSubmit}>Submit</button>
+                <button type='submit' className='submitBtn' onClick={handleSubmit}>Add</button>
             </form>
         </div>
     </div>

@@ -19,11 +19,11 @@ function App() {
   function handleSubmit(newRow){
     edit === null ? 
     setRows([...rows, newRow]) : 
-    setRows(rows.map[(currRow, index) =>{
-      if(index !== edit) return currRow
+    setRows(rows.map((currRow, index) =>{
+      if(index !== edit) return currRow;
 
-      return newRow
-    }])
+      return newRow;
+    }))
   }
 
   function handleEdit(index){
