@@ -1,0 +1,43 @@
+.modal-container{
+    position: fixed;
+    z-index: 1;
+    left:0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.4);
+   
+}
+
+.modal{
+    border-radius: 5px;
+    padding: 2rem;
+    background-color: wheat;
+    width: 25em;
+}
+
+.modal .submitBtn{
+    display: block;
+
+}
+.form-grp{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-grp input,
+.form-grp textarea,
+.form-grp select{
+    border: 1px solid black;
+    border-radius: 1px;
+    padding: .3rem;
+    font-size: .1rem;
+}
+
+.form-grp label{
+    margin-bottom: .2rem;
+}

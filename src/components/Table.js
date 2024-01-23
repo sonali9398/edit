@@ -1,13 +1,15 @@
 import React from 'react'
 import {BsFillTrashFill, BsFillPencilFill} from 'react-icons/bs'
+import './Table.css'
+
 const Table = () => {
   return (
-    <div>
-        <table>
+    <div className='table-wrapper'>
+        <table className='table'>
             <thead>
                 <tr>
-                    <th>Page</th>
-                    <th>Desc</th>
+                    <th>Pages</th>
+                    <th className='expand'>Desc</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -17,11 +19,11 @@ const Table = () => {
                     <td>Home</td>
                     <td>This is main page</td>
                     <td>
-                        <span>Live</span>
+                        <span className='label label-live'>Live</span>
                     </td>
                     <td>
-                        <span>
-                            <BsFillTrashFill/>
+                        <span className='actions'>
+                            <BsFillTrashFill className='delete'/>
                             <BsFillPencilFill/>
                         </span>
                     </td>
@@ -30,11 +32,24 @@ const Table = () => {
                     <td>About</td>
                     <td>This is about page</td>
                     <td>
-                        <span>Live</span>
+                        <span className='label label-draft'>Draft</span>
                     </td>
                     <td>
-                        <span>
-                            <BsFillTrashFill/>
+                        <span className='actions'>
+                            <BsFillTrashFill className='delete'/>
+                            <BsFillPencilFill/>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Error</td>
+                    <td>This is error page</td>
+                    <td>
+                        <span className='label label-error'>Error</span>
+                    </td>
+                    <td>
+                        <span className='actions'>
+                            <BsFillTrashFill className='delete'/>
                             <BsFillPencilFill/>
                         </span>
                     </td>
